@@ -1,0 +1,10 @@
+{
+  "name": "ARAFAT STEEL DECORATION",
+  "short_name": "ARAFAT STEEL",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3f5f3",
+  "theme_color": "#143c35",
+  "description": "Offline steel decoration business app",
+  "icons": []
+}
