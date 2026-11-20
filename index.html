@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#143c35">
+<title>ARAFAT STEEL DECORATION</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brandmark">ASD</div>
+  <div class="brandtext"><strong>ARAFAT STEEL DECORATION</strong><small id="tagline">Steel • Design • Calculation</small></div>
+  <button id="langBtn" class="langbtn" aria-label="Change language">EN</button>
+</header>
+<main>
+  <section id="home" class="screen active">
+    <div class="hero"><div><span class="eyebrow" data-i18n="welcome">স্বাগতম</span><h1>ARAFAT<br>STEEL DECORATION</h1><p data-i18n="offline">অফলাইনে ব্যবহারযোগ্য ব্যবসায়িক সহকারী</p></div><div class="hero-badge">ASD</div></div>
+    <div class="sectionhead"><h2 data-i18n="tools">আপনার কাজের টুলস</h2><span data-i18n="offlineReady">Offline Ready</span></div>
+    <div class="tiles">
+      <button class="tile" data-go="accessories"><b class="tileicon">⚙</b><strong data-i18n="accessories">Accessories</strong><small data-i18n="accessoriesSub">পণ্যের তালিকা ও ছবি</small></button>
+      <button class="tile" data-go="pipes"><b class="tileicon">▤</b><strong data-i18n="pipe">Bangladeshi Pipe</strong><small data-i18n="pipeSub">পাইপের তথ্য ও দাম</small></button>
+      <button class="tile" data-go="weight"><b class="tileicon">⚖</b><strong data-i18n="weight">Metal Weight Calculator</strong><small data-i18n="weightSub">ওজন হিসাব করুন</small></button>
+      <button class="tile" data-go="invoice"><b class="tileicon">▧</b><strong data-i18n="invoice">Quotation / Invoice</strong><small data-i18n="invoiceSub">কোটেশন ও বিল তৈরি</small></button>
+      <button class="tile" data-go="cnc"><b class="tileicon">▦</b><strong data-i18n="cnc">CNC Design</strong><small data-i18n="cncSub">ডিজাইন ক্যাটালগ</small></button>
+      <button class="tile" data-go="admin"><b class="tileicon">⚙</b><strong data-i18n="customize">Admin / Customize</strong><small data-i18n="customizeSub">তথ্য পরিবর্তন ও ব্যাকআপ</small></button>
+    </div>
+    <p class="notice" data-i18n="localNote">আপনার তথ্য এই ডিভাইসেই সংরক্ষিত থাকবে। নিয়মিত Backup নিন।</p>
+  </section>
+
+  <section id="accessories" class="screen">
+    <div class="pagehead"><button class="back" data-go="home">‹</button><div><h2 data-i18n="accessories">Accessories</h2><small data-i18n="accessoriesSub">পণ্যের তালিকা ও ছবি</small></div></div>
+    <input id="accessorySearch" class="field" data-placeholder="search" placeholder="Search / খুঁজুন">
+    <div id="accessoryList" class="productgrid"></div>
+  </section>
+
+  <section id="pipes" class="screen">
+    <div class="pagehead"><button class="back" data-go="home">‹</button><div><h2 data-i18n="pipe">Bangladeshi Pipe</h2><small data-i18n="pipeSub">পাইপের তথ্য ও দাম</small></div></div>
+    <input id="pipeSearch" class="field" data-placeholder="search" placeholder="Search / খুঁজুন">
+    <div id="pipeList" class="productgrid"></div>
+  </section>
+
+  <section id="weight" class="screen">
+    <div class="pagehead"><button class="back" data-go="home">‹</button><div><h2 data-i18n="weight">Metal Weight Calculator</h2><small data-i18n="weightSub">ওজন হিসাব করুন</small></div></div>
+    <div class="panel">
+      <label data-i18n="shape">ধরন / Shape</label>
+      <select id="shape" class="field"><option value="round" data-i18n="round">Round Pipe</option><option value="square" data-i18n="square">Square / Rectangular Pipe</option><option value="flat" data-i18n="flat">Flat Bar</option><option value="sheet" data-i18n="sheet">Sheet / Plate</option></select>
+      <div class="formgrid">
+        <label><span data-i18n="outerDia">বাইরের ব্যাস (mm)</span><input id="dim1" class="field" type="number" min="0" step="any" placeholder="e.g. 25"></label>
+        <label><span data-i18n="width">প্রস্থ (mm)</span><input id="dim2" class="field" type="number" min="0" step="any" placeholder="e.g. 25"></label>
+        <label><span data-i18n="height">উচ্চতা (mm)</span><input id="dim3" class="field" type="number" min="0" step="any" placeholder="e.g. 25"></label>
+        <label><span data-i18n="thickness">পুরুত্ব (mm)</span><input id="thickness" class="field" type="number" min="0" step="any" placeholder="e.g. 1.2"></label>
+        <label class="full"><span data-i18n="length">দৈর্ঘ্য (meter)</span><input id="length" class="field" type="number" min="0" step="any" value="1"></label>
+      </div>
+      <button id="calcWeight" class="primary" data-i18n="calculate">হিসাব করুন</button>
+      <div id="weightResult" class="result" aria-live="polite">—</div>
+      <p class="hint" data-i18n="weightHint">এটি আনুমানিক হিসাব। বাস্তব ওজন গ্রেড, সহনশীলতা ও মাপ অনুযায়ী ভিন্ন হতে পারে।</p>
+    </div>
+  </section>
+
+  <section id="invoice" class="screen">
+    <div class="pagehead"><button class="back" data-go="home">‹</button><div><h2 data-i18n="invoice">Quotation / Invoice</h2><small data-i18n="invoiceSub">কোটেশন ও বিল তৈরি</small></div></div>
+    <div class="panel">
+      <div class="formgrid">
+        <label><span data-i18n="customer">Customer name</span><input id="customer" class="field" placeholder="Customer name"></label>
+        <label><span data-i18n="phone">Phone</span><input id="customerPhone" class="field" placeholder="01XXXXXXXXX"></label>
+      </div>
+      <div class="sectionhead"><h3 data-i18n="addLine">পণ্য যোগ করুন</h3></div>
+      <div class="formgrid">
+        <label class="full"><span data-i18n="itemName">পণ্যের নাম</span><input id="itemName" class="field" placeholder="Item / পণ্যের নাম"></label>
+        <label><span data-i18n="qty">পরিমাণ</span><input id="itemQty" class="field" type="number" min="0" step="any" value="1"></label>
+        <label><span data-i18n="unitPrice">একক মূল্য (৳)</span><input id="itemPrice" class="field" type="number" min="0" step="any"></label>
+      </div>
+      <button id="addLine" class="secondary" data-i18n="addItem">পণ্য যোগ করুন</button>
+      <div id="invoiceLines"></div>
+      <div class="totalrow"><span data-i18n="total">সর্বমোট</span><strong id="invoiceTotal">৳ 0.00</strong></div>
+      <label><span data-i18n="notes">নোট</span><textarea id="invoiceNotes" class="field" rows="2"></textarea></label>
+      <div class="actions"><button id="printInvoice" class="primary" data-i18n="print">Print / PDF</button><button id="clearInvoice" class="secondary" data-i18n="clear">Clear</button></div>
+    </div>
+  </section>
+
+  <section id="cnc" class="screen">
+    <div class="pagehead"><button class="back" data-go="home">‹</button><div><h2 data-i18n="cnc">CNC Design</h2><small data-i18n="cncSub">ডিজাইন ক্যাটালগ</small></div></div>
+    <div id="cncList" class="productgrid"></div>
+    <p class="notice" data-i18n="cncNote">Admin Panel থেকে নিজের CNC ডিজাইনের ছবি যোগ করুন।</p>
+  </section>
+
+  <section id="admin" class="screen">
+    <div class="pagehead"><button class="back" data-go="home">‹</button><div><h2 data-i18n="customize">Admin / Customize</h2><small data-i18n="customizeSub">তথ্য পরিবর্তন ও ব্যাকআপ</small></div></div>
+    <div class="panel">
+      <h3 data-i18n="businessInfo">Business information</h3>
+      <label><span data-i18n="businessName">প্রতিষ্ঠানের নাম</span><input id="bizName" class="field" value="ARAFAT STEEL DECORATION"></label>
+      <label><span data-i18n="businessPhone">ফোন নম্বর</span><input id="bizPhone" class="field" placeholder="আপনার ফোন নম্বর"></label>
+      <label><span data-i18n="businessAddress">ঠিকানা</span><textarea id="bizAddress" class="field" rows="2"></textarea></label>
+      <button id="saveBusiness" class="primary" data-i18n="save">Save / সংরক্ষণ</button>
+      <hr>
+      <h3 data-i18n="manageCatalog">Catalog management</h3>
+      <label><span data-i18n="category">Category</span><select id="newCategory" class="field"><option value="accessories">Accessories</option><option value="pipes">Bangladeshi Pipe</option><option value="cnc">CNC Design</option></select></label>
+      <label><span data-i18n="productName">পণ্যের নাম</span><input id="newProductName" class="field"></label>
+      <label><span data-i18n="productPrice">দাম (৳)</span><input id="newProductPrice" class="field" type="number" min="0"></label>
+      <label><span data-i18n="imageUrl">ছবির URL (ঐচ্ছিক)</span><input id="newProductImage" class="field" placeholder="https://..."></label>
+      <button id="addProduct" class="secondary" data-i18n="addProduct">পণ্য যোগ করুন</button>
+      <div id="adminCatalog" class="adminlist"></div>
+      <hr>
+      <h3 data-i18n="backup">Backup & Restore</h3>
+      <div class="actions"><button id="exportBackup" class="secondary" data-i18n="export">Export Backup</button><label class="filebtn"><span data-i18n="restore">Restore Backup</span><input id="importBackup" type="file" accept="application/json"></label></div>
+      <p class="hint" data-i18n="backupHint">ফোন পরিবর্তন বা অ্যাপের ডাটা মুছে যাওয়ার আগে Backup ফাইল সংরক্ষণ করুন।</p>
+    </div>
+  </section>
+</main>
+<nav class="bottomnav">
+  <button data-go="home" class="navitem selected"><span>⌂</span><small data-i18n="home">Home</small></button>
+  <button data-go="accessories" class="navitem"><span>⚙</span><small data-i18n="accessories">Accessories</small></button>
+  <button data-go="weight" class="navitem"><span>⚖</span><small data-i18n="weightShort">Weight</small></button>
+  <button data-go="invoice" class="navitem"><span>▧</span><small data-i18n="invoiceShort">Invoice</small></button>
+  <button data-go="admin" class="navitem"><span>☷</span><small data-i18n="adminShort">Admin</small></button>
+</nav>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
